@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>READ JSON</title>
+
+</head>
+
+<body>
+
+	<input type="file" name="json" id="json">
+	<div id="jsonTable"></div>
+
+	<div id="content" style="text-align: center;">
+
+
+	</div>
+	<script type="text/javascript">
+		//var xy = {};
+		//var xy,z,za;
+		// console.log(typeof xy)
+		// function run(){
+		// 	var xy
+		// 	console.log(xy)
+
+		// }
+		// run()
+
+
+		var json = { "name": "John", "Class": 12 };
+		Object.entries(json).forEach(function (item, index) {
+			console.log("Key->" + item[0] + "  Value->" + item[1])
+		})
+
+		// Object.entries(jsonhtml).forEach(function(item,index){
+		// 	var first = document.createElement(item[0])
+		// 	first.innerText = item[1]
+		// 	document.getElementById('content').append(first)
+		// })
+		// 		{
+		// 	"table":[
+		// 		{"thead":
+		// 			{"tr":[{"th":"name"},{"th":"class"}]}
+		// 		},
+		// 		{"tbody":
+		// 		[{"tr":[{"td":"Mariyam"},{"td":"first"}]},
+		// 		{"tr":[{"th":"mano"},{"th":"second"}]}
+		// 		]
+		// 		}
+		// 			]
+		// }
+
+		document.getElementById('json').onchange = function (e) {
+			console.log(e.target.files[0])
+			var xfile = e.target.files[0]
+			var read = new FileReader();
+			read.readAsText(xfile)
+			read.onload = function (e1) {
+				var json1 = (e1.target.result);
+				console.log(json1)
+				json1 = (JSON.parse(json1))
+				console.log(json1)
+				Object.entries(json1).forEach(function ([key, value], index) {
+					console.log(typeof value)
+					if (typeof value == 'object') {
+						var tablee = document.createElement(key)
+						console.log(typeof value.length)
+						console.log(value.length)
+						if (typeof value.length != 'undefined') {
+							value.forEach(function (item1, index1) {
+								console.log("adding")
+								Object.entries(item1).forEach(function ([key1, value1], index1) {
+									console.log(typeof value1)
+									console.log(value1)
+									// if (typeof value == 'object') {
+									if (typeof value1 == 'object') {
+										var tablehead = document.createElement(key1)
+										console.log(typeof value1.length)
+										console.log(value1.length)
+										if (typeof value1.length != 'undefined') {
+											value1.forEach(function (item3, index3) {
+												console.log("adding")
+												console.log(item3)
+												Object.entries(item3).forEach(function ([key3, value3], index3) {
+													var th1 = document.createElement(key3)
+													if (typeof value3 == 'object') {
+														
+														console.log(typeof value3.length)
+														console.log(value3.length)
+														if (typeof value3.length != 'undefined') {
+															value3.forEach(function (item4, index4) {
+																console.log("adding")
+																console.log(item4)
+																Object.entries(item4).forEach(function ([key4, value4], index4) {
+																	var td1 = document.createElement(key4)
+																	console.log(typeof value4)
+
+																	td1.innerText = value4
+																	th1.append(td1)
+																	tablehead.append(th1)
+																	tablee.append(tablehead)
+
+																})
+															})
+															document.getElementById('jsonTable').append(tablee)
+														} else {
+															Object.entries(value).forEach(function ([key4, value4], index4) {
+																var first = document.createElement(key4)
+																first.innerText = value4
+																tablee.append(tablehead)
+															})
+															document.getElementById('jsonTable').append(tablee)
+														}
+													} else {
+													
+														console.log(typeof value3)
+														th1.innerText = value3
+														tablehead.append(th1)
+														tablee.append(tablehead)
+														document.getElementById('jsonTable').append(tablee)
+													}
+
+												})
+											})
+											document.getElementById('jsonTable').append(tablee)
+										} else {
+											Object.entries(value).forEach(function ([key3, value3], index3) {
+												var first = document.createElement(key3)
+												first.innerText = value3
+												tablee.append(tablehead)
+											})
+											document.getElementById('jsonTable').append(tablee)
+										}
+									} else {
+										var first = document.createElement(key1)
+										first.innerText = value1
+										tablee.append(first)
+										document.getElementById('jsonTable').append(tablee)
+									}
+								})
+							})
+							document.getElementById('jsonTable').append(tablee)
+						}
+
+						else {
+							Object.entries(value).forEach(function ([key, value1], index1) {
+								var first = document.createElement(key1)
+								first.innerText = value1
+								underdiv.append(first)
+							})
+							document.getElementById('jsonTable').append(underdiv)
+						}
+						//console.log(JSON.stringify(value))
+
+					}
+					else {
+						var first = document.createElement(key)
+						first.innerText = value
+						document.getElementById('jsonTable').append(first)
+					}
+
+				})
+
+
+
+
+			}
+		}
+
+
+		// var jsonhtml = {
+		// 	"h2": "Class",
+		// 	"p": "Blockchain",
+		// 	"div": [
+		// 		{ "h2": "ProductsCount", "p": "13" },
+		// 		{ "h2": "Sold", "p": "3" }
+		// 	]
+		// };
+		// Object.entries(jsonhtml).forEach(function ([key, value], index) {
+		// 	console.log(typeof value)
+		// 	if (typeof value == 'object') {
+		// 		var underdiv = document.createElement(key)
+		// 		console.log(typeof value.length)
+		// 		if (typeof value.length != 'undefined') {
+		// 			value.forEach(function (item2, index2) {
+
+		// 				Object.entries(item2).forEach(function ([key2, value2], index2) {
+		// 					var first = document.createElement(key2)
+		// 					first.innerText = value2
+		// 					//document.getElementById('content').append(first)
+		// 					underdiv.append(first)
+		// 				})
+		// 			})
+		// 			document.getElementById('content').append(underdiv)
+		// 		} else {
+		// 			Object.entries(value).forEach(function ([key1, value1], index1) {
+		// 				var first = document.createElement(key1)
+		// 				first.innerText = value1
+		// 				underdiv.append(first)
+		// 			})
+		// 			document.getElementById('content').append(underdiv)
+		// 		}
+		// 		//console.log(JSON.stringify(value))+
+
+		// 	} else {
+		// 		var first = document.createElement(key)
+		// 		first.innerText = value
+		// 		document.getElementById('content').append(first)
+		// 	}
+		// })
+	</script>
+</body>
+
+</html>

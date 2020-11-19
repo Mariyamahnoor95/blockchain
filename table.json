@@ -1,0 +1,14 @@
+{
+	"table":[
+		{"thead":
+			[{"th":"Name"},{"th":"Class"}]
+		},
+		{"tbody":[{"tr":[{"td":"Hamza"},{"td":"first"}]},
+				{"tr":[{"td":"Mano"},{"td":"second"}]},
+				{"tr":[{"td":"Jon"},{"td":"third"}]},
+				{"tr":[{"td":"Bilal"},{"td":"fourth"}]}
+				]
+		
+		}
+			]
+}

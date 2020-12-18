@@ -47,17 +47,31 @@ http.createServer(function(req,res){
 	}else if(req.url == '/task2'){
 		res.write('<p>Welcome To Post</p>')
 		res.write(realstate_blockchain.getTaskPercentage('2').toString()+"\n" )
+		res.write(realstate_blockchain.getTaskPercentage('3').toString()+"\n" )
+		res.write(realstate_blockchain.getTaskPercentage('1').toString()+"\n" )
+		res.write(realstate_blockchain.getTaskPercentage('4').toString()+"\n" )
 		res.end()
 	}else{
 		var data = {'text':'asdasds'}
 		var d = 1;
+		
 
 		res.writeHead(200,{'contentType':'application/json'})
+		res.write( realstate_blockchain.AssigneePay()+"\n" )
 		res.write(d.toString())
 		res.end()
 	}
 	
 }).listen(90)
+
+
+
+
+
+
+realstate_blockchain.projectDetails()
+console.log(realstate_blockchain.getTaskPercentage('2'))
+console.log(realstate_blockchain.TaskAssigneee('1'))
 
 
 

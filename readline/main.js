@@ -38,6 +38,7 @@ http.createServer(function(req,res){
 		
 		res.write('<h1>Nodejs --------- Project</h1>' )
 		res.write( realstate_blockchain.name+"\n" )
+		res.write( JSON.stringify(realstate_blockchain)+"\n" )
 		res.write( realstate_blockchain.type+"\n" )
 		res.write( realstate_blockchain.days.toString()+"\n" )
 		res.write( realstate_blockchain.dayscompleted.toString()+"\n" )

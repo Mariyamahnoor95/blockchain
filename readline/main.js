@@ -25,14 +25,28 @@ blockchain_task.set('1',task1);
 blockchain_task.set('2',task2);
 blockchain_task.set('3',task3);
 blockchain_task.set('4',task4);
+var realstate_blockchain = new project('blockchain','software',15,blockchain_task,'50')
+array1 = ['asd', 'sad', 543574]
+obj1 = {
+	name: 'Mustafa',
+	id: 78567
+}
+obj2 = obj1.toString()
 http.createServer(function(req,res){
 	if(req.url == '/'){
 		console.log(req.url)
 		
-		res.write('<h1>Nodejs Project</h1>' + req.url+ )
+		res.write('<h1>Nodejs --------- Project</h1>' )
+		res.write( realstate_blockchain.name+"\n" )
+		res.write( realstate_blockchain.type+"\n" )
+		res.write( realstate_blockchain.days.toString()+"\n" )
+		res.write( realstate_blockchain.dayscompleted.toString()+"\n" )
+		
+		res.write( obj1.name )
 		res.end()
-	}else if(req.url == '/post'){
-		res.write('Welcome To Post')
+	}else if(req.url == '/task2'){
+		res.write('<p>Welcome To Post</p>')
+		res.write(realstate_blockchain.getTaskPercentage('2').toString()+"\n" )
 		res.end()
 	}else{
 		var data = {'text':'asdasds'}
@@ -49,7 +63,7 @@ http.createServer(function(req,res){
 
 
 
-var realstate_blockchain = new project('blockchain','software',15,blockchain_task,'50')
+
 realstate_blockchain.projectDetails()
 console.log(realstate_blockchain.getTaskPercentage('2'))
 console.log(realstate_blockchain.TaskAssigneee('1'))

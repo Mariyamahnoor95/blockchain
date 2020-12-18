@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+  <title>cvmaker</title>
+  <style>
+    p { color:black;
+      text-align:center;
+     
+ }
+ #second-section {
+                
+                background-color: rgb(247, 235, 128);
+                width:600px;
+				height:500px;
+				float:right;
+				margin: 50px 20px 50px 20px;
+				
+            }
+    
+  </style>
+</head>
+
+<body>
+
+
+  
+Name  <input type="text" id="name"><br>
+email <input type="text" id="email">
+
+        
+
+<div id="second-section">
+  <!-- <p id="namearea" value=""></p> -->
+  <p id="paragraph">Hello World!</p>
+  <h1 id="namearea" value="" style="text-align: center;"></h1>
+<p id="empty" ></p>
+<p id="empt"></p>
+</div>
+        
+<button id="createParagraph">Create Resume</button>
+  
+</body>
+<script>
+  document.getElementById("paragraph").innerHTML = "RESUME";
+
+var arr=["karachi"]
+var objj={
+objective:"Passionate to solve intricate engineering problems that delivers highest business value.",
+degree:"B.E in the field of Electronics from NED university of engineering and technology",
+skills:["WEB Devolopment","Git", "python"]
+
+}
+var note=" will be furnished upon request"
+document.getElementById("createParagraph").onclick = function() {
+               
+               
+document.getElementById("namearea").innerHTML =  document.getElementById("name").value;
+document.getElementById("empty").innerHTML =  document.getElementById("email").value;
+
+document.getElementById("empt").innerHTML = arr+"<br><strong> OBJECTIVE:  </strong>"+objj.objective +"<br> <strong> ACADEMIC Qualification:  </strong>"+objj.degree+"<br> <strong> SKILLS : </strong>"+  objj.skills+"<br> <strong> Reference : </strong>"+ note;
+}
+           
+
+
+
+</script>
+
+</html>

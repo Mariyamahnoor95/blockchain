@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          class marksheet {
+            constructor(name, roll_no) {
+                this.roll_no = roll_no
+                this._name = name
+
+            }
+
+            name() {
+                return this._name +" "+this.roll_no
+
+            }
+            persubject(){
+                mark =""
+                return 
+            }
+
+        }
+        class MyAudio extends Audio {
+            constructor(name, roll_no) {
+                super(name, roll_no);
+                this._lyrics = '';
+                this.music;
+            }
+
+            get lyrics() {
+                return this._lyrics;
+            }
+
+            set lyrics(str) {
+                this._lyrics = str;
+            }
+        }
+
+        myaudi = new Audio("abc", 1)
+        console.log(myaudi)
+        let ab = new MyAudio("abcd", 2)
+        //set the value with set and get
+        console.log(ab)
+        console.log(ab.lyrics)
+        ab.lyrics = "anjsndkasd"
+        console.log(ab.music)
+        ab.music = "coke studio"
+        console.log(ab.music)
+        console.log(ab)
+    </script>
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="demo">
+
+    </div>
+
+    <div id="mycv">
+
+    </div>
+
+
+    <script>
+        // class Car {
+        //     constructor(name, year) {
+        //         this.name = name;
+        //         this.year = year;
+        //     }
+        //     age(x) {
+        //         return x - this.year;
+        //     }
+        // }
+
+        // let date = new Date();
+        // let year = date.getFullYear();
+
+        // let myCar = new Car("Ford", 2014);
+        // document.getElementById("demo").innerHTML =
+        //     "My car is " + myCar.age(year) + " years old.";
+
+
+        class cv {
+            constructor(name, email, address, contact, objective, education, skills,major_courses,reference) {
+                this.name = name;
+                this.email = email;
+                this.address = address
+                this.contact = contact;
+                this.objective = objective;
+                this.education = education;
+
+                this.skills = skills;
+                this.major_courses= major_courses
+                this.reference= reference
+
+
+            }
+            printCV() {
+                console.log("\n------" + this.name + "---------\n")
+                console.log("\n------" + this.email + "---------\n")
+                console.log("\n------" + this.contact + "---------\n")
+                console.log("\n------" + this.address + "---------\n")
+                console.log("\n--OBJECTIVE--\n" + this.objective + "---------\n")
+                console.log("\n---EDUCATIONS--\n---" + this.education + "---------\n")
+                console.log("\n---SKILLS--\n---" + this.skills + "---------\n")
+                console.log("\n---Major courses--\n---" + this.major_courses + "---------\n")
+                console.log("\n---Reference--\n---" + this.reference + "---------\n")
+                return this.name + " <br>" + this.email + "<br>  " + this.contact;
+            }
+
+
+        }
+        let mano = new cv("MARIYAM MAHNOOR", "maryammahnoor@gmail.com", 89798268689,"karachi", "To persue my career in your firm", "B.E in Electronics from NED university", "Expertise in python \nHTML CSS  javascript \n c",
+        "Anolog integrated circuit\n digital logic Design\n computer programming \n Digital siignal Processing", "will be furnished upon request");
+        document.getElementById("mycv").innerHTML = mano.printCV();
+    
+        let hamza = new cv("HAMZA NOORI", "mhamzaor@gmail.com", 897989,"karachi", "To develop value in your firm", "B.s in software from NED university", "Expertise in python \nHTML CSS  javascript \n c",
+        "Data structure \n  Design analysis\n computer programming \n Digital siignal Processing", "will be furnished upon request");
+       
+        hamza.printCV()
+
+
+
+        // class Audio {
+        //     constructor(artist, playlist) {
+        //         this.playlist = playlist
+        //         this._artist = artist
+        //     }
+
+        //     Artist() {
+        //         return this._artist
+
+        //     }
+        // }
+
+        // class MyAudio extends Audio {
+        //     constructor(artist, playlist) {
+        //         super(artist, playlist);
+        //         this._lyrics = '';
+        //         this.music;
+        //     }
+
+        //     get lyrics() {
+        //         return this._lyrics;
+        //     }
+
+        //     set lyrics(str) {
+        //         this._lyrics = str;
+        //     }
+        // }
+
+        // myaudi = new Audio("abc", 1)
+        // console.log(myaudi)
+        // let ab = new MyAudio("abcd", 2)
+        // //set the value with set and get
+        // console.log(ab)
+        // console.log(ab.lyrics)
+        // ab.lyrics = "anjsndkasd"
+
+        // console.log(ab.lyrics)
+        // ab.lyrics = "and"
+        // //set the value without set
+        // console.log(ab.music)
+        // ab.music = "coke studio"
+        // console.log(ab.music)
+        // console.log(ab)
+
+
+    </script>
+</body>
+
+</html>

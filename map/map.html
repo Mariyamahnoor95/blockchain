@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var map1 = new Map([[1, 2], [2, 3], [4, 5], [8, 19], [6, 78], [5, 17]]);
+        console.log("Map1");
+        console.log(map1);
+
+        var map2 = new Map([["firstname", "sumit"],
+        ["lastname", "ghosh"], ["website", "geeksforgeeks"]]);
+
+        console.log("Map2");
+        console.log(map2);
+
+        var map3 = new Map([["whole numbers", [1, 2, 3, 4]],
+        ["Decimal numbers", [1.1, 1.2, 1.3, 1.4]],
+        ["negative numbers", [-1, -2, -3, -4]]]);
+
+        console.log("Map3");
+        console.log(map3);
+        var map4 = new Map([[["first name", "last name"],
+        ["sumit", "ghosh"]],
+        [["friend 1", "friend 2"],
+        ["sourav", "gourav"]]]);
+
+        console.log("Map4");
+        console.log(map4);
+
+        var mymap = new Map();
+
+        // adding some elements to the map  
+        mymap.set("first name", "sumit");
+        mymap.set("last name", "ghosh");
+        mymap.set("website", "gks")
+            .set("friend 1", "gouv")
+            .set("friend 2", "sav");
+        console.log("mymap has website ? " +
+            mymap.has("website"));
+
+
+        var get_entries = mymap.entries();
+        console.log("----------entries---------");
+        for (var ele of get_entries)
+            console.log(ele);
+        var getit = map1[Symbol.iterator]();
+        for (var elem of getit)
+            console.log("symbol iterable")
+        console.log(elem);
+        var getit = mymap[Symbol.iterator]();
+        for (var elem of getit) {
+            console.log("symbol iterable")
+            console.log(elem);
+
+        }
+        function printTwo(values, key) {
+            console.log(key + "  " + values);
+        }
+        console.log("-----two parameter-----");
+        map1.forEach(printTwo)
+        console.log("-----two parameter-----");
+        mymap.forEach(printTwo);
+
+
+        console.log("mymap has firend 3 ? " +
+            mymap.has("friend 3"));
+
+
+        // Using Map.prototype.get(k) 
+
+
+        console.log("get value for key website " +
+            mymap.get("website"));
+
+        // returns undefined 
+        console.log("get value for key friend 3 " +
+            mymap.get("friend 3"));
+
+        console.log("delete element with key website "
+            + mymap.delete("website"));
+
+        console.log("mymap has website ? " +
+            mymap.has("website"));
+
+       
+        console.log("delete element with key website " +
+            mymap.delete("friend 3"));
+
+        mymap.clear();
+
+       
+// let mySet = new Set()
+
+// mySet.add(1)           // Set [ 1 ]
+// mySet.add(5)          
+// mySet.add(5)          
+// mySet.add('some text') 
+// let o = {a: 1, b: 2}
+// mySet.add(o)
+
+// mySet.add({a: 6, b: 2})   
+
+// mySet.has(5)              
+// mySet.has(Math.sqrt(25))  
+// mySet.has('Some Text'.toLowerCase()) 
+// mySet.has(o)       // true
+
+// mySet.size         // 5
+
+// mySet.delete(5)    
+// mySet.has(5)       
+
+// mySet.size        
+
+// console.log(mySet)
+
+// function isSuperset(set, subset) {
+//     for (let elem of subset) {
+//         if (!set.has(elem)) {
+//             return false
+//         }
+//     }
+//     return true
+// }
+
+// function union(setA, setB) {
+//     let _union = new Set(setA)
+//     for (let elem of setB) {
+//         _union.add(elem)
+//     }
+//     return _union
+// }
+
+// function intersection(setA, setB) {
+//     let _intersection = new Set()
+//     for (let elem of setB) {
+//         if (setA.has(elem)) {
+//             _intersection.add(elem)
+//         }
+//     }
+//     return _intersection
+// }
+
+// function symmetricDifference(setA, setB) {
+//     let _difference = new Set(setA)
+//     for (let elem of setB) {
+//         if (_difference.has(elem)) {
+//             _difference.delete(elem)
+//         } else {
+//             _difference.add(elem)
+//         }
+//     }
+//     return _difference
+// }
+
+// function difference(setA, setB) {
+//     let _difference = new Set(setA)
+//     for (let elem of setB) {
+//         _difference.delete(elem)
+//     }
+//     return _difference
+// }
+
+// // Examples
+// let setA = new Set([1, 2, 3, 4])
+// let setB = new Set([2, 3])
+// let setC = new Set([3, 4, 5, 6])
+
+// console.log(isSuperset(setA, setB)  )        
+// console.log(union(setA, setC)  )             
+// console.log(intersection(setA, setC) )       
+// console.log(symmetricDifference(setA, setC)) 
+// console.log(difference(setA, setC) )        
+
+    </script>
+</body>
+
+</html>

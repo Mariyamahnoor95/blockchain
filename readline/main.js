@@ -86,10 +86,3 @@ realstate_blockchain.status_()
 realstate_blockchain.projectDetails()
 console.log(realstate_blockchain.getTaskPercentage('2'))
 console.log(realstate_blockchain.TaskAssigneee('1'))
-
-
-
-
-realstate_blockchain.projectDetails()
-console.log(realstate_blockchain.getTaskPercentage('2'))
-console.log(realstate_blockchain.TaskAssigneee('1'))

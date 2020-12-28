@@ -33,26 +33,36 @@ obj1 = {
 }
 obj2 = obj1.toString()
 http.createServer(function(req,res){
-	if(req.url == '/'){
+	if(req.url == '/projectdetail'){
 		console.log(req.url)
 		
 		res.write('<h1>Nodejs --------- Project</h1>' )
 		res.write( realstate_blockchain.name+"\n" )
 		res.write( JSON.stringify(realstate_blockchain)+"\n" )
-		res.write( realstate_blockchain.type+"\n" )
+		// res.write( JSON.stringify(realstate_blockchain.blockchain_task.get('1'))+"\n" )
+		res.write( "\n"+realstate_blockchain.type+"\n" )
 		res.write( realstate_blockchain.days.toString()+"\n" )
 		res.write( realstate_blockchain.dayscompleted.toString()+"\n" )
 		
 		res.write( obj1.name )
 		res.end()
-	}else if(req.url == '/task2'){
+	}else if(req.url == '/taskPercentage'){
 		res.write('<p>Welcome To Post</p>')
 		res.write(realstate_blockchain.getTaskPercentage('2').toString()+"\n" )
 		res.write(realstate_blockchain.getTaskPercentage('3').toString()+"\n" )
 		res.write(realstate_blockchain.getTaskPercentage('1').toString()+"\n" )
 		res.write(realstate_blockchain.getTaskPercentage('4').toString()+"\n" )
 		res.end()
-	}else{
+	}else if(req.url == '/taskassigneee'){
+		res.write('<p>Welcome To Post</p>')
+		res.write(realstate_blockchain.TaskAssigneee('1')+"\n" )
+		res.write(realstate_blockchain.TaskAssigneee('2')+"\n" )
+		res.write(realstate_blockchain.TaskAssigneee('3')+"\n" )
+		res.write(realstate_blockchain.TaskAssigneee('4')+"\n" )
+		
+		res.end()
+	}
+	else{
 		var data = {'text':'asdasds'}
 		var d = 1;
 		
@@ -65,7 +75,10 @@ http.createServer(function(req,res){
 	
 }).listen(90)
 
-
+realstate_blockchain.CompletedTasks()
+realstate_blockchain.PendingTasks()
+console.log(realstate_blockchain.daysRemaining())
+realstate_blockchain.status_()
 
 
 
@@ -73,8 +86,6 @@ http.createServer(function(req,res){
 realstate_blockchain.projectDetails()
 console.log(realstate_blockchain.getTaskPercentage('2'))
 console.log(realstate_blockchain.TaskAssigneee('1'))
-
-
 
 
 
